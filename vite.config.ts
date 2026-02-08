@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/freeze-aircon/",   // <-- add this line
+  base: "/",   // <-- change this
 
   server: {
     host: "::",
