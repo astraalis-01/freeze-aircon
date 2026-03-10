@@ -66,8 +66,8 @@ const acBrands = [
 ];
 
 const serviceAreas = [
-  { area: "Puthagaram", services: "AC Service, Inspection, Repair" },
   { area: "Kolathur", services: "AC Service, Fridge, Washing Machine" },
+  { area: "Puthagaram", services: "AC Service, Inspection, Repair" },
   { area: "Lakshmipuram", services: "AC Service, Repair, Installation" },
   { area: "Ambattur", services: "AC Installation, Repair, All Appliances" },
   { area: "Madhavaram", services: "AC Conditioning Service, Maintenance" },
@@ -83,8 +83,8 @@ const Services = () => {
     <>
       <SEOHead 
         title="AC Service & Repair in Chennai | ₹149 Inspection | Freeze Aircon"
-        description="Professional AC service, repair & installation in Puthagaram, Kolathur, Chennai. All brands - Daikin, Godrej, Bluestar, Panasonic. Inspection at just ₹149. Same-day service. Call +91 99529 76191"
-        keywords="AC service Chennai, AC repair Puthagaram, AC installation, Daikin AC service, Godrej AC service, Bluestar AC service, AC tune up Chennai, refrigerator service, washing machine repair, Kolathur AC service"
+        description="Professional AC service, repair & installation in Kolathur, Puthagaram and nearby Chennai areas. All brands - Daikin, Godrej, Bluestar, Panasonic. Inspection at just ₹149. Same-day service. Call +91 99529 76191"
+        keywords="AC service Chennai, AC repair Kolathur, AC repair Puthagaram, AC installation, Daikin AC service, Godrej AC service, Bluestar AC service, AC tune up Chennai, refrigerator service, washing machine repair, Kolathur AC service"
         canonicalPath="/services"
       />
       

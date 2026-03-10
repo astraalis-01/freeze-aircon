@@ -70,9 +70,9 @@ const About = () => {
   return (
     <>
       <SEOHead 
-        title="About Freeze Aircon | Trusted AC Service Center in Puthagaram, Chennai"
-        description="Freeze Aircon - Puthagaram's trusted AC service center with skilled technicians. Expert AC repair, installation & maintenance across 20+ Chennai areas. Inspection at ₹149. Call +91 99529 76191"
-        keywords="about Freeze Aircon, AC service Puthagaram, trusted AC repair Chennai, skilled AC technicians, AC service near me, best AC service center Chennai"
+        title="About Freeze Aircon | Trusted AC Service Center in Kolathur, Chennai"
+        description="Freeze Aircon - Kolathur's trusted AC service center with skilled technicians. Expert AC repair, installation & maintenance across 20+ Chennai areas. Inspection at ₹149. Call +91 99529 76191"
+        keywords="about Freeze Aircon, AC service Kolathur, AC service Puthagaram, trusted AC repair Chennai, skilled AC technicians, AC service near me, best AC service center Chennai"
         canonicalPath="/about"
       />
       
@@ -88,7 +88,7 @@ const About = () => {
                 About Freeze Aircon
               </h1>
               <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "100ms" }}>
-                Puthagaram's Trusted AC Service Center Since Day One
+                Kolathur's Trusted AC Service Center Since Day One
               </p>
             </div>
           </div>

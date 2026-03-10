@@ -40,9 +40,9 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Freeze Aircon | Best AC Service in Puthagaram, Kolathur, Chennai | ₹149 Inspection"
-        description="Freeze Aircon - Puthagaram & Kolathur's #1 AC service center. Expert AC repair, installation & maintenance at just ₹149 inspection. Skilled technicians, same-day doorstep service. Call +91 99529 76191"
-        keywords="AC service Puthagaram, AC repair Chennai, best AC service near me, AC installation, AC service Kolathur, AC maintenance Chennai"
+        title="Freeze Aircon | Best AC Service in Kolathur, Chennai | ₹149 Inspection"
+        description="Freeze Aircon - Kolathur's #1 AC service center. Expert AC repair, installation & maintenance at just ₹149 inspection. Skilled technicians, same-day doorstep service. Call +91 99529 76191"
+        keywords="AC service Kolathur, AC repair Chennai, best AC service near me, AC installation, AC maintenance Chennai, AC service Puthagaram"
         canonicalPath="/"
       />
       
@@ -64,14 +64,20 @@ const Index = () => {
                   <span className="text-sm font-semibold tracking-wide">Inspection at just ₹149</span>
                 </div>
                 
-                <h1 className="text-balance">
-                  <span className="block">Puthagaram's Trusted</span>
-                  <span className="block text-accent">AC Service Center</span>
-                </h1>
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-1.5 text-sm font-medium text-primary-foreground/90">
+                    <span className="inline-block h-2 w-2 rounded-full bg-accent" />
+                    <span>Serving Kolathur, Chennai & Nearby Areas</span>
+                  </div>
+                  <h1 className="text-balance">
+                    <span className="block">Trusted Home AC Service</span>
+                    <span className="block text-accent">in Kolathur, Chennai</span>
+                  </h1>
+                </div>
                 
                 <p className="text-lg md:text-xl text-primary-foreground/90 max-w-lg text-pretty">
                   Expert <strong>AC repair, service & installation</strong> with skilled technicians. 
-                  Same-day doorstep service across Chennai at affordable prices!
+                  Same-day doorstep service across Kolathur, Puthagaram, Lakshmipuram and nearby Chennai areas at affordable prices.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 pt-4">
@@ -87,6 +93,10 @@ const Index = () => {
                       Call Now
                     </Button>
                   </a>
+                </div>
+                <div className="pt-3 text-sm text-primary-foreground/80 max-w-lg">
+                  <span className="font-semibold">Service Areas:</span>{" "}
+                  <span>Kolathur, Puthagaram, Lakshmipuram, Ambattur, Madhavaram and nearby Chennai locations.</span>
                 </div>
               </header>
               
