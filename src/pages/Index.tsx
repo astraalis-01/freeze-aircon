@@ -58,29 +58,40 @@ const Index = () => {
           <div className="relative container mx-auto px-4 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
-              <header className="text-primary-foreground space-y-6 animate-fade-in">
-                <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-foreground/20">
-                  <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
-                  <span className="text-sm font-semibold tracking-wide">Inspection at just ₹149</span>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-1.5 text-sm font-medium text-primary-foreground/90">
-                    <span className="inline-block h-2 w-2 rounded-full bg-accent" />
-                    <span>Serving Kolathur, Chennai & Nearby Areas</span>
+              <header className="text-primary-foreground text-center lg:text-left space-y-5 md:space-y-6 animate-fade-in">
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-baseline justify-center lg:justify-start gap-x-2">
+                    <span className="text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold tracking-tight text-primary-foreground leading-none">
+                      Freeze
+                    </span>
+                    <span className="text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold tracking-tight text-accent leading-none">
+                      Aircon
+                    </span>
                   </div>
-                  <h1 className="text-balance">
-                    <span className="block">Trusted Home AC Service</span>
-                    <span className="block text-accent">in Kolathur, Chennai</span>
-                  </h1>
+                  <div className="w-12 h-px bg-primary-foreground/25 mx-auto lg:mx-0" aria-hidden="true" />
+                  <div className="flex flex-col sm:flex-row flex-wrap items-center lg:items-start gap-2">
+                    <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-foreground/20 w-fit">
+                      <Star className="w-4 h-4 fill-accent text-accent shrink-0" aria-hidden="true" />
+                      <span className="text-sm font-semibold tracking-wide">Inspection at just ₹149</span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-medium text-primary-foreground/90 w-fit">
+                      <span className="inline-block h-2 w-2 rounded-full bg-accent shrink-0" />
+                      <span>Serving Chennai & Nearby Areas</span>
+                    </div>
+                  </div>
                 </div>
+
+                <h1 className="text-balance max-w-xl mx-auto lg:mx-0">
+                  <span className="block">Trusted Home AC Service</span>
+                  <span className="block text-accent">in Kolathur, Chennai</span>
+                </h1>
                 
-                <p className="text-lg md:text-xl text-primary-foreground/90 max-w-lg text-pretty">
+                <p className="text-lg md:text-xl text-primary-foreground/90 max-w-lg mx-auto lg:mx-0 text-pretty">
                   Expert <strong>AC repair, service & installation</strong> with skilled technicians. 
                   Same-day doorstep service across Kolathur, Puthagaram, Lakshmipuram and nearby Chennai areas at affordable prices.
                 </p>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
                   <Link to="/services" aria-label="View all AC services and prices">
                     <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-lg">
                       View Services
@@ -94,7 +105,7 @@ const Index = () => {
                     </Button>
                   </a>
                 </div>
-                <div className="pt-3 text-sm text-primary-foreground/80 max-w-lg">
+                <div className="pt-3 text-sm text-primary-foreground/80 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                   <span className="font-semibold">Service Areas:</span>{" "}
                   <span>Kolathur, Puthagaram, Lakshmipuram, Ambattur, Madhavaram and nearby Chennai locations.</span>
                 </div>

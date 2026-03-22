@@ -38,9 +38,9 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:animate-bounce-subtle transition-all">
               <Snowflake className="w-6 h-6 text-primary-foreground" />
             </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-lg text-foreground">FREEZE</span>
-              <span className="font-bold text-lg text-primary"> AIRCON</span>
+            <div className="leading-tight">
+              <span className="font-bold text-base sm:text-lg text-foreground">FREEZE</span>
+              <span className="font-bold text-base sm:text-lg text-primary"> AIRCON</span>
             </div>
           </Link>
 

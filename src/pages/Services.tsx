@@ -14,14 +14,6 @@ import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 const services = [
   {
@@ -66,16 +58,16 @@ const acBrands = [
 ];
 
 const serviceAreas = [
-  { area: "Kolathur", services: "AC Service, Fridge, Washing Machine" },
-  { area: "Puthagaram", services: "AC Service, Inspection, Repair" },
-  { area: "Lakshmipuram", services: "AC Service, Repair, Installation" },
-  { area: "Ambattur", services: "AC Installation, Repair, All Appliances" },
-  { area: "Madhavaram", services: "AC Conditioning Service, Maintenance" },
-  { area: "Vinayagapuram", services: "AC Tune Up, Residential AC" },
-  { area: "Kathirvedu", services: "Cooling System Repair, Fridge Service" },
-  { area: "Retteri", services: "AC Installation, AC Repair" },
-  { area: "Puzhal", services: "Thermostat Repair, Installation" },
-  { area: "Anna Nagar", services: "AC Service, Repair, All Appliances" },
+  "Kolathur",
+  "Puthagaram",
+  "Lakshmipuram",
+  "Ambattur",
+  "Madhavaram",
+  "Vinayagapuram",
+  "Kathirvedu",
+  "Retteri",
+  "Puzhal",
+  "Anna Nagar",
 ];
 
 const Services = () => {
@@ -200,30 +192,22 @@ const Services = () => {
               <h2 id="areas-heading" className="text-foreground mb-4">
                 Service by Location in Chennai
               </h2>
-              <p className="text-muted-foreground">Same-day doorstep service across all areas</p>
+              <p className="text-muted-foreground">Doorstep service across these areas</p>
             </header>
 
-            <div className="max-w-3xl mx-auto">
-              <Card className="border-border/50 shadow-md">
-                <CardContent className="p-0">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-[40%] font-bold">Location</TableHead>
-                        <TableHead className="font-bold">Services Available</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {serviceAreas.map((item) => (
-                        <TableRow key={item.area}>
-                          <TableCell className="font-bold text-primary">{item.area}</TableCell>
-                          <TableCell className="text-muted-foreground">{item.services}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </CardContent>
-              </Card>
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <div className="flex flex-wrap justify-center gap-3">
+                  {serviceAreas.map((area) => (
+                    <span
+                      key={area}
+                      className="px-4 py-2 bg-primary/5 border border-primary/20 rounded-full text-foreground font-medium hover:bg-primary/10 hover:border-primary/40 transition-colors"
+                    >
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -1,21 +1,16 @@
 import {
   AirVent,
-  CheckCircle,
   Clock,
   MapPin,
-  Phone,
   Shield,
-  Thermometer,
   Wrench,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -148,31 +143,14 @@ const ACService = () => {
                 <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-fade-in text-pretty" style={{ animationDelay: "100ms" }}>
                   Expert technicians for all AC brands. Split AC, Window AC - we service them all!
                 </p>
-                <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "200ms" }}>
-                  <a href="tel:+919952976191">
-                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg gap-2">
-                      <Phone className="w-5 h-5" />
-                      Call: +91 99529 76191
-                    </Button>
-                  </a>
-                  <Link to="/contact">
-                    <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-bold">
-                      Book Online
-                    </Button>
-                  </Link>
+                <div
+                  className="inline-flex items-center justify-center rounded-full bg-primary-foreground/15 border border-primary-foreground/25 px-6 py-3 text-primary-foreground font-bold text-lg md:text-xl animate-fade-in"
+                  style={{ animationDelay: "200ms" }}
+                >
+                  Inspection starts at ₹149
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Inspection Banner */}
-        <section className="py-6 bg-accent" aria-label="Special offer">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-accent-foreground font-bold text-lg md:text-xl">
-              <Thermometer className="w-5 h-5 inline mr-2" />
-              AC Inspection & Diagnosis: Only <span className="text-2xl">₹149</span> | Same Day Service Available!
-            </p>
           </div>
         </section>
 
@@ -325,22 +303,9 @@ const ACService = () => {
             <h2 className="text-primary-foreground mb-4">
               Need AC Service Today?
             </h2>
-            <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto text-pretty">
-              Don't suffer in the heat! Get expert AC service at your doorstep. Inspection at just ₹149!
+            <p className="text-primary-foreground/90 text-lg max-w-2xl mx-auto text-pretty font-semibold">
+              Inspection starts at ₹149
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+919952976191">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg gap-2">
-                  <Phone className="w-5 h-5" />
-                  Call: +91 99529 76191
-                </Button>
-              </a>
-              <a href="https://wa.me/919952976191" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-bold">
-                  WhatsApp Us
-                </Button>
-              </a>
-            </div>
           </div>
         </section>
 
