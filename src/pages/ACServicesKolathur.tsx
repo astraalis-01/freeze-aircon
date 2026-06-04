@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/structuredData";
 import ReviewsSection from "@/components/ReviewsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,9 +31,23 @@ const nearbyAreas = [
   "Villivakkam",
 ];
 
+const kolathurStructuredData = [
+  buildServiceSchema({
+    name: "AC Services in Kolathur, Chennai",
+    description: "Doorstep AC repair, service and installation in Kolathur and Puthagaram.",
+    path: "/ac-services-kolathur",
+    priceFrom: "149",
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "AC Services Kolathur", path: "/ac-services-kolathur" },
+  ]),
+];
+
 const ACServicesKolathur = () => {
   return (
     <>
+      <StructuredData data={kolathurStructuredData} />
       <SEOHead
         title="AC Services Kolathur Chennai | 5.0 Rated | ₹149 Inspection | Freeze Aircon"
         description="Best AC Services in Kolathur & Puthagaram, Chennai. 90+ verified ratings on JustDial & Sulekha. Same-day AC repair, installation & service. Inspection ₹149. Call +91 99529 76191."

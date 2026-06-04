@@ -12,6 +12,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import { buildBreadcrumbSchema } from "@/lib/structuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -73,6 +75,12 @@ const serviceAreas = [
 const Services = () => {
   return (
     <>
+      <StructuredData
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
       <SEOHead 
         title="AC Services Chennai | Repair & Installation Kolathur | Freeze Aircon"
         description="AC Services in Chennai & Kolathur — repair, installation, fridge, washing machine & geyser. 90+ verified ratings. All brands. ₹149 inspection. Call +91 99529 76191"

@@ -11,6 +11,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+} from "@/lib/structuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -117,9 +123,25 @@ const whyChooseUs = [
   },
 ];
 
+const refrigeratorStructuredData = [
+  buildServiceSchema({
+    name: "Refrigerator Repair & Fridge Service in Chennai",
+    description: "Refrigerator repair for all brands in Kolathur, Puthagaram and Chennai.",
+    path: "/services/refrigerator",
+    priceFrom: "149",
+  }),
+  buildFaqSchema(faqs),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Refrigerator Service", path: "/services/refrigerator" },
+  ]),
+];
+
 const RefrigeratorService = () => {
   return (
     <>
+      <StructuredData data={refrigeratorStructuredData} />
       <SEOHead 
         title="Refrigerator Repair in Chennai | Fridge Service | ₹149 Inspection | Freeze Aircon"
         description="Expert refrigerator repair service in Chennai, Kolathur. Single door, double door fridge repair for Samsung, LG, Whirlpool, Godrej. Compressor ₹2500, Gas charging ₹1850. Call +91 99529 76191"

@@ -11,6 +11,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+} from "@/lib/structuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -121,9 +127,25 @@ const whyChooseUs = [
   },
 ];
 
+const washingStructuredData = [
+  buildServiceSchema({
+    name: "Washing Machine Repair & Service in Chennai",
+    description: "Washing machine repair for front load, top load and semi-automatic machines in Chennai.",
+    path: "/services/washing-machine",
+    priceFrom: "149",
+  }),
+  buildFaqSchema(faqs),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Washing Machine Service", path: "/services/washing-machine" },
+  ]),
+];
+
 const WashingMachineService = () => {
   return (
     <>
+      <StructuredData data={washingStructuredData} />
       <SEOHead 
         title="Washing Machine Repair in Chennai | Service & Installation | ₹149 Inspection | Freeze Aircon"
         description="Expert washing machine repair in Chennai, Kolathur. Front load, top load, semi-automatic machine repair for Samsung, LG, Whirlpool, IFB. PCB ₹2000, Drum overhaul ₹2500. Call +91 99529 76191"

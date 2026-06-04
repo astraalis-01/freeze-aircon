@@ -10,6 +10,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+} from "@/lib/structuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -114,9 +120,26 @@ const whyChooseUs = [
   },
 ];
 
+const acStructuredData = [
+  buildServiceSchema({
+    name: "AC Services in Chennai & Kolathur",
+    description:
+      "Professional AC repair, installation, gas refilling, chemical wash and maintenance for all major brands in Chennai.",
+    path: "/services/ac",
+    priceFrom: "149",
+  }),
+  buildFaqSchema(faqs),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "AC Service", path: "/services/ac" },
+  ]),
+];
+
 const ACService = () => {
   return (
     <>
+      <StructuredData data={acStructuredData} />
       <SEOHead 
         title="AC Services Chennai | AC Repair Kolathur | ₹149 Inspection | Freeze Aircon"
         description="AC Services in Chennai & Kolathur. 90+ verified ratings. AC repair, installation, gas refilling for Daikin, LG, Samsung, Voltas. Chemical wash ₹2000. Call +91 99529 76191"

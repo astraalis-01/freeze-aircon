@@ -11,6 +11,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import StructuredData from "@/components/StructuredData";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+} from "@/lib/structuredData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -111,9 +117,25 @@ const whyChooseUs = [
   },
 ];
 
+const heaterStructuredData = [
+  buildServiceSchema({
+    name: "Geyser & Water Heater Repair in Chennai",
+    description: "Geyser repair and installation for storage and instant water heaters in Chennai.",
+    path: "/services/heater",
+    priceFrom: "149",
+  }),
+  buildFaqSchema(faqs),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Geyser Service", path: "/services/heater" },
+  ]),
+];
+
 const HeaterService = () => {
   return (
     <>
+      <StructuredData data={heaterStructuredData} />
       <SEOHead 
         title="Water Heater & Geyser Repair in Chennai | ₹149 Inspection | Freeze Aircon"
         description="Expert water heater and geyser repair in Chennai, Kolathur. Storage, instant, gas geyser repair for Bajaj, Havells, Racold, Venus. G/S ₹700, Heating element ₹950. Call +91 99529 76191"
