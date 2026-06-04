@@ -74,9 +74,9 @@ const Services = () => {
   return (
     <>
       <SEOHead 
-        title="AC Service & Repair in Chennai | ₹149 Inspection | Freeze Aircon"
-        description="Professional AC service, repair & installation in Kolathur, Puthagaram and nearby Chennai areas. All brands - Daikin, Godrej, Bluestar, Panasonic. Inspection at just ₹149. Same-day service. Call +91 99529 76191"
-        keywords="AC service Chennai, AC repair Kolathur, AC repair Puthagaram, AC installation, Daikin AC service, Godrej AC service, Bluestar AC service, AC tune up Chennai, refrigerator service, washing machine repair, Kolathur AC service"
+        title="AC Services Chennai | Repair & Installation Kolathur | Freeze Aircon"
+        description="AC Services in Chennai & Kolathur — repair, installation, fridge, washing machine & geyser. 90+ verified ratings. All brands. ₹149 inspection. Call +91 99529 76191"
+        keywords="AC Services Chennai, AC Services Kolathur, AC repair Kolathur, AC installation Chennai, Daikin AC service, refrigerator service Chennai, washing machine repair, Kolathur AC service"
         canonicalPath="/services"
       />
       

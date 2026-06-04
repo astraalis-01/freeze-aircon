@@ -21,6 +21,7 @@ const Header = () => {
   ];
 
   const serviceLinks = [
+    { name: "AC Services Kolathur", path: "/ac-services-kolathur", icon: AirVent },
     { name: "AC Service", path: "/services/ac", icon: AirVent },
     { name: "Refrigerator Service", path: "/services/refrigerator", icon: Refrigerator },
     { name: "Washing Machine Service", path: "/services/washing-machine", icon: WashingMachine },

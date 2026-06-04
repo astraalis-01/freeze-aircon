@@ -3,8 +3,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Star,
-  ExternalLink,
   CheckCircle,
 } from "lucide-react";
 import Header from "@/components/Header";
@@ -12,6 +10,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import BookingForm from "@/components/BookingForm";
 import SEOHead from "@/components/SEOHead";
+import ReviewsSection from "@/components/ReviewsSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -67,7 +66,7 @@ const Contact = () => {
       <SEOHead 
         title="Contact Freeze Aircon | AC Service in Puthagaram, Kolathur, Chennai | Call +91 99529 76191"
         description="Contact Freeze Aircon for AC service, repair & installation in Puthagaram, Kolathur, Chennai. Call +91 99529 76191 or WhatsApp. ₹149 inspection. Same-day doorstep service."
-        keywords="contact Freeze Aircon, AC service Puthagaram phone number, AC repair Chennai contact, book AC service, AC service Kolathur, WhatsApp AC service"
+        keywords="contact Freeze Aircon, AC Services Kolathur, AC Services Chennai, AC service Puthagaram phone number, book AC service, WhatsApp AC service"
         canonicalPath="/contact"
       />
       
@@ -232,36 +231,7 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Google Reviews Section */}
-        <section className="py-20 bg-background" aria-labelledby="reviews-heading">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-8 h-8 fill-accent text-accent" aria-hidden="true" />
-                ))}
-              </div>
-              <h2 id="reviews-heading" className="text-foreground mb-4">
-                Read Our Google Reviews
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 text-pretty">
-                Don't just take our word for it. Read real experiences from customers who trust 
-                <strong> Freeze Aircon</strong> for their AC service needs.
-              </p>
-              <a
-                href="https://www.google.com/search?q=freeze+aircon+chennai+reviews"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View Google Reviews for Freeze Aircon"
-              >
-                <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold gap-2 shadow-md">
-                  View Google Reviews
-                  <ExternalLink className="w-4 h-4" aria-hidden="true" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
+        <ReviewsSection variant="compact" />
 
         {/* Final CTA */}
         <section className="py-20 bg-gradient-hero" aria-label="Call to action">

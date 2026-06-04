@@ -5,13 +5,14 @@ import {
   ThumbsUp,
   MapPin,
   CheckCircle,
-  Star,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEOHead from "@/components/SEOHead";
+import ReviewsSection from "@/components/ReviewsSection";
 import { Card, CardContent } from "@/components/ui/card";
+import { REVIEW_SUMMARY } from "@/lib/site";
 
 const whyUsPoints = [
   {
@@ -70,9 +71,9 @@ const About = () => {
   return (
     <>
       <SEOHead 
-        title="About Freeze Aircon | Trusted AC Service Center in Kolathur, Chennai"
-        description="Freeze Aircon - Kolathur's trusted AC service center with skilled technicians. Expert AC repair, installation & maintenance across 20+ Chennai areas. Inspection at ₹149. Call +91 99529 76191"
-        keywords="about Freeze Aircon, AC service Kolathur, AC service Puthagaram, trusted AC repair Chennai, skilled AC technicians, AC service near me, best AC service center Chennai"
+        title="About Freeze Aircon | AC Services Kolathur | 5.0 Rated"
+        description={`About Freeze Aircon — ${REVIEW_SUMMARY.totalReviewCount}+ verified ratings. AC Services in Kolathur & Chennai. Skilled technicians, ₹149 inspection. Call +91 99529 76191`}
+        keywords="about Freeze Aircon, AC Services Kolathur, AC Services Chennai, AC service Puthagaram, trusted AC repair Chennai"
         canonicalPath="/about"
       />
       
@@ -212,25 +213,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Trust Banner */}
-        <section className="py-16 bg-muted" aria-labelledby="trust-heading">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-8 h-8 fill-accent text-accent" aria-hidden="true" />
-                ))}
-              </div>
-              <h2 id="trust-heading" className="text-2xl md:text-3xl text-foreground mb-4">
-                Trusted by Your Neighbors
-              </h2>
-              <p className="text-muted-foreground text-lg text-pretty">
-                We deliver <strong>quality AC service</strong> with skilled technicians. 
-                Check our Google reviews to see what customers say about Freeze Aircon!
-              </p>
-            </div>
-          </div>
-        </section>
+        <ReviewsSection variant="compact" />
 
         <Footer />
       </div>

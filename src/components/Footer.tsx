@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Snowflake } from "lucide-react";
+import { REVIEW_LINKS, REVIEW_SUMMARY } from "@/lib/site";
 
 const Footer = () => {
   return (
@@ -18,7 +19,17 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-background/70 text-sm">
-              We provide good service with skilled technicians. For inspection just ₹149 only! Your trusted AC service center in Puthagaram, Kolathur, Chennai.
+              {REVIEW_SUMMARY.aggregateRating}.0 rated AC Services in Puthagaram, Kolathur, Chennai.
+              {REVIEW_SUMMARY.totalReviewCount}+ verified ratings on JustDial & Sulekha. Inspection ₹149.
+            </p>
+            <p className="text-background/60 text-xs">
+              <a href={REVIEW_LINKS.justdial} target="_blank" rel="noopener noreferrer" className="hover:text-secondary">
+                JustDial Reviews
+              </a>
+              {" · "}
+              <a href={REVIEW_LINKS.sulekha} target="_blank" rel="noopener noreferrer" className="hover:text-secondary">
+                Sulekha Reviews
+              </a>
             </p>
           </div>
 
@@ -30,6 +41,7 @@ const Footer = () => {
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
                 { name: "Services", path: "/services" },
+                { name: "AC Services Kolathur", path: "/ac-services-kolathur" },
                 { name: "Contact", path: "/contact" },
               ].map((link) => (
                 <li key={link.path}>

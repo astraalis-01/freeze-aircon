@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SITE_URL } from "@/lib/site";
 
 interface SEOHeadProps {
   title: string;
@@ -7,53 +8,51 @@ interface SEOHeadProps {
   canonicalPath?: string;
 }
 
+const setMeta = (selector: string, attr: string, value: string, create?: { name?: string; property?: string }) => {
+  let el = document.querySelector(selector) as HTMLMetaElement | null;
+  if (el) {
+    el.setAttribute(attr, value);
+    return;
+  }
+  if (!create) return;
+  el = document.createElement("meta");
+  if (create.name) el.setAttribute("name", create.name);
+  if (create.property) el.setAttribute("property", create.property);
+  el.setAttribute(attr, value);
+  document.head.appendChild(el);
+};
+
 const SEOHead = ({ title, description, keywords, canonicalPath = "" }: SEOHeadProps) => {
   useEffect(() => {
-    // Update document title
+    const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+
     document.title = title;
 
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
-    } else {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      metaDescription.setAttribute("content", description);
-      document.head.appendChild(metaDescription);
-    }
+    setMeta('meta[name="description"]', "content", description, { name: "description" });
 
-    // Update or create meta keywords
     if (keywords) {
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) {
-        metaKeywords.setAttribute("content", keywords);
-      } else {
-        metaKeywords = document.createElement("meta");
-        metaKeywords.setAttribute("name", "keywords");
-        metaKeywords.setAttribute("content", keywords);
-        document.head.appendChild(metaKeywords);
-      }
+      setMeta('meta[name="keywords"]', "content", keywords, { name: "keywords" });
     }
 
-    // Update Open Graph tags
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", title);
-    }
+    setMeta('meta[property="og:title"]', "content", title, { property: "og:title" });
+    setMeta('meta[property="og:description"]', "content", description, {
+      property: "og:description",
+    });
+    setMeta('meta[property="og:url"]', "content", canonicalUrl, { property: "og:url" });
+    setMeta('meta[name="twitter:title"]', "content", title, { name: "twitter:title" });
+    setMeta('meta[name="twitter:description"]', "content", description, {
+      name: "twitter:description",
+    });
 
-    let ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute("content", description);
-    }
-
-    // Update canonical URL
-    const baseUrl = "https://freezeaircon.com";
-    let canonical = document.querySelector('link[rel="canonical"]');
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) {
-      canonical.setAttribute("href", `${baseUrl}${canonicalPath}`);
+      canonical.setAttribute("href", canonicalUrl);
+    } else {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      canonical.setAttribute("href", canonicalUrl);
+      document.head.appendChild(canonical);
     }
-
   }, [title, description, keywords, canonicalPath]);
 
   return null;

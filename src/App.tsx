@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -11,6 +11,7 @@ import RefrigeratorService from "./pages/RefrigeratorService";
 import WashingMachineService from "./pages/WashingMachineService";
 import HeaterService from "./pages/HeaterService";
 import Contact from "./pages/Contact";
+import ACServicesKolathur from "./pages/ACServicesKolathur";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,19 +21,20 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/ac" element={<ACService />} />
+          <Route path="/ac-services-kolathur" element={<ACServicesKolathur />} />
           <Route path="/services/refrigerator" element={<RefrigeratorService />} />
           <Route path="/services/washing-machine" element={<WashingMachineService />} />
           <Route path="/services/heater" element={<HeaterService />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

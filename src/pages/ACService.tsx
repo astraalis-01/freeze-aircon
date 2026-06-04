@@ -118,9 +118,9 @@ const ACService = () => {
   return (
     <>
       <SEOHead 
-        title="AC Service in Chennai | AC Repair & Installation | ₹149 Inspection | Freeze Aircon"
-        description="Best AC service in Puthagaram, Kolathur, Chennai. Expert AC repair, installation, gas refilling & maintenance for all brands - Daikin, LG, Samsung, Voltas. Installation ₹1600, Chemical wash ₹2000. Call +91 99529 76191"
-        keywords="AC service Chennai, AC repair Puthagaram, AC installation Chennai, AC gas refilling, split AC service, window AC repair, Daikin AC service, LG AC repair, Samsung AC service, Voltas AC repair, AC service near me, AC service Kolathur, AC maintenance Chennai, AC tune up, AC chemical wash"
+        title="AC Services Chennai | AC Repair Kolathur | ₹149 Inspection | Freeze Aircon"
+        description="AC Services in Chennai & Kolathur. 90+ verified ratings. AC repair, installation, gas refilling for Daikin, LG, Samsung, Voltas. Chemical wash ₹2000. Call +91 99529 76191"
+        keywords="AC Services Chennai, AC Services Kolathur, AC service Chennai, AC repair Puthagaram, AC installation Chennai, AC gas refilling, split AC service, Daikin AC service, AC service near me, AC maintenance Chennai"
         canonicalPath="/services/ac"
       />
       
@@ -135,10 +135,10 @@ const ACService = () => {
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
                   <AirVent className="w-5 h-5 text-primary-foreground" />
-                  <span className="text-primary-foreground font-semibold">#1 AC Service in Chennai</span>
+                  <span className="text-primary-foreground font-semibold">AC Services Chennai & Kolathur</span>
                 </div>
                 <h1 className="text-primary-foreground mb-6 animate-fade-in text-balance">
-                  Professional AC Service & Repair in Chennai
+                  Professional AC Services & Repair in Chennai
                 </h1>
                 <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-fade-in text-pretty" style={{ animationDelay: "100ms" }}>
                   Expert technicians for all AC brands. Split AC, Window AC - we service them all!

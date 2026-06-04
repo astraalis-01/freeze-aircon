@@ -17,8 +17,10 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import BookingForm from "@/components/BookingForm";
 import ServiceCard from "@/components/ServiceCard";
-import StatCounter from "@/components/StatCounter";
+import StatDisplay from "@/components/StatDisplay";
+import ReviewsSection from "@/components/ReviewsSection";
 import SEOHead from "@/components/SEOHead";
+import { REVIEW_SUMMARY } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -40,9 +42,9 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Freeze Aircon | Best AC Service in Kolathur, Chennai | ₹149 Inspection"
-        description="Freeze Aircon - Kolathur's #1 AC service center. Expert AC repair, installation & maintenance at just ₹149 inspection. Skilled technicians, same-day doorstep service. Call +91 99529 76191"
-        keywords="AC service Kolathur, AC repair Chennai, best AC service near me, AC installation, AC maintenance Chennai, AC service Puthagaram"
+        title="Freeze Aircon | AC Services in Kolathur, Chennai | 5.0 Rated | ₹149 Inspection"
+        description="AC Services in Kolathur & Chennai by Freeze Aircon. 90+ verified ratings (JustDial & Sulekha). AC repair, installation & maintenance. ₹149 inspection. Call +91 99529 76191"
+        keywords="AC Services Chennai, AC Services Kolathur, AC service Kolathur, AC repair Chennai, AC installation Chennai, best AC service Kolathur, AC service Puthagaram, AC service near me"
         canonicalPath="/"
       />
       
@@ -72,6 +74,11 @@ const Index = () => {
                   <div className="flex flex-col sm:flex-row flex-wrap items-center lg:items-start gap-2">
                     <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-foreground/20 w-fit">
                       <Star className="w-4 h-4 fill-accent text-accent shrink-0" aria-hidden="true" />
+                      <span className="text-sm font-semibold tracking-wide">
+                        {REVIEW_SUMMARY.aggregateRating}.0 · {REVIEW_SUMMARY.totalReviewCount}+ Reviews
+                      </span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-foreground/20 w-fit">
                       <span className="text-sm font-semibold tracking-wide">Inspection at just ₹149</span>
                     </div>
                     <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-medium text-primary-foreground/90 w-fit">
@@ -82,13 +89,13 @@ const Index = () => {
                 </div>
 
                 <h1 className="text-balance max-w-xl mx-auto lg:mx-0">
-                  <span className="block">Trusted Home AC Service</span>
-                  <span className="block text-accent">in Kolathur, Chennai</span>
+                  <span className="block">AC Services in Kolathur & Chennai</span>
+                  <span className="block text-accent">Trusted Home Appliance Experts</span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-primary-foreground/90 max-w-lg mx-auto lg:mx-0 text-pretty">
-                  Expert <strong>AC repair, service & installation</strong> with skilled technicians. 
-                  Same-day doorstep service across Kolathur, Puthagaram, Lakshmipuram and nearby Chennai areas at affordable prices.
+                  Expert <strong>AC Services</strong> — repair, service & installation with skilled technicians. 
+                  Same-day doorstep service across Kolathur, Puthagaram, Lakshmipuram and nearby Chennai areas.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
@@ -108,6 +115,10 @@ const Index = () => {
                 <div className="pt-3 text-sm text-primary-foreground/80 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                   <span className="font-semibold">Service Areas:</span>{" "}
                   <span>Kolathur, Puthagaram, Lakshmipuram, Ambattur, Madhavaram and nearby Chennai locations.</span>
+                  {" "}
+                  <Link to="/ac-services-kolathur" className="text-accent font-semibold hover:underline">
+                    AC Services Kolathur →
+                  </Link>
                 </div>
               </header>
               
@@ -130,10 +141,10 @@ const Index = () => {
         <section className="bg-gradient-primary py-12" aria-label="Service statistics">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <StatCounter end={149} prefix="₹" label="Inspection Cost" />
-              <StatCounter end={7} label="Days a Week" />
-              <StatCounter end={1000} suffix="+" label="Happy Customers" />
-              <StatCounter end={100} suffix="%" label="Satisfaction" />
+              <StatDisplay value="₹149" label="Inspection Cost" />
+              <StatDisplay value="7 Days" label="Open Every Week" />
+              <StatDisplay value={`${REVIEW_SUMMARY.totalReviewCount}+`} label="Verified Ratings" />
+              <StatDisplay value={`${REVIEW_SUMMARY.aggregateRating}.0★`} label="Customer Rating" />
             </div>
           </div>
         </section>
@@ -143,10 +154,10 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <header className="text-center mb-12">
               <h2 id="services-heading" className="text-foreground mb-4 text-balance">
-                Home Appliance Repair Services
+                AC Services & Home Appliance Repair in Chennai
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                <strong>AC Service</strong> • Fridge Service • Washing Machine • Geyser Repair in Chennai
+                <strong>AC Services Kolathur</strong> • Fridge • Washing Machine • Geyser Repair
               </p>
             </header>
             
@@ -222,36 +233,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Google Reviews Section */}
-        <section className="py-20 bg-muted" aria-labelledby="reviews-heading">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-8 h-8 fill-accent text-accent" aria-hidden="true" />
-                ))}
-              </div>
-              <h2 id="reviews-heading" className="text-foreground mb-4">
-                Trusted by Chennai Customers
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 text-pretty">
-                We are recognized for our <strong>expert AC service</strong>, customer support, and transparent pricing. 
-                See what our happy customers say about Freeze Aircon!
-              </p>
-              <a
-                href="https://www.google.com/search?q=freeze+aircon+chennai+reviews"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read customer reviews on Google"
-              >
-                <Button size="lg" variant="outline" className="font-bold gap-2 border-primary/30 hover:bg-primary/5">
-                  Read Our Google Reviews
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
+        <ReviewsSection />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-hero" aria-label="Call to action">
