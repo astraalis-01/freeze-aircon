@@ -27,10 +27,12 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build project
+      - name: Build project (Vite + prerender for SEO)
         run: npm run build
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: false
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
